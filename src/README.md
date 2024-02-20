@@ -8,6 +8,8 @@ Refer to `README.ipynb` for an interactive README and a basic evaluation framewo
 In your favorite Python environment manager:
 `pip install -r requirements.txt`
 
+Make sure `OPENAI_API_KEY` is set in your environment.
+
 ## Basic Usage
 
 You can invoke `main.py` as such
