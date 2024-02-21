@@ -1,9 +1,10 @@
 # How to run
+
 - Pull down the repo/changes
 - cd into src/
 - create a .env file with your OPENAI_API_KEY
-- `make run-shell`
-- from in the shell, `poetry run sheetseeker "<your query>" <path/to/input_spreadsheet.xlsx> [--output_file=outfile.xlsx] [--strategy=<strategy>]`
+- run `make run-shell`
+- from the shell, `poetry run sheetseeker "<your query>" <path/to/input_spreadsheet.xlsx> [--output_file=outfile.xlsx] [--strategy=<strategy>]`
 
 If no output file is given it will save using the same name (and location) as the inputfile with `_highlighted` appended to the end of it.
 
@@ -12,6 +13,8 @@ Note the project is mounted in src/ so won't have access to the outer data/ dire
 Dependencies are listed in the pyproject.toml file
 
 # How does it work
+
+This is a Python project utilizing Poetry for package and dependency management. It's wrapped up in a docker container so you won't have to install anything on your system (except Docker.. or Podman, though I haven't tested that) or do any set up.
 
 First, the spreadsheet is loaded using the [openpyxl](https://openpyxl.readthedocs.io/en/stable/index.html) library. Then it executes a strategy for highlighting the appropriate cells, calling openai and returning a set of cells and/or ranges to be highlighted. This list is processed, utilizing openpyxl again to apply some style to the cells in question. Finally, a copy of the spreadsheet is saved.
 
