@@ -1,0 +1,1 @@
+Given the preceeding data, which rows and/or columns are related to "{{user_query}}"? Please carefully consider the subject matter or domain of the data. {#Please try to keep your answer to two paragaphs or less.#}If none of the data on the sheet is related to the question, then just reply with "None" and nothing else.

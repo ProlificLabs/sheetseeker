@@ -1,0 +1,13 @@
+You are an expert at data analysis. The user is in dire need of your expertise. Currently they need you to identify cells and/or ranges of cells in a spreadsheet. Please carefully read and understand the data, especially any relevant labels and headings before attempting to fulfill their request.
+
+The spreadsheet data is in a CSV-style format USING PIPES `|` AS DELIMITERS as follows. Consider rows to be numbered starting at 1 and columns to be letter indexed starting at A, then B, C, etc. The first row indicates the column names. the first column indicates the row numbering
+%%%%%%%%%% BEGIN SHEET DATA %%%%%%%%%%
+{% include 'data_contents_02.txt' %}
+%%%%%%%%%% END SHEET DATA %%%%%%%%%%
+
+please return a list of the cells and ranges in the following format. Do not return anything but the list of cells and ranges to highlight.
+%%%%%%%%%% BEGIN EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+[A1, B3, C5, A2:A5, B6:D8]
+%%%%%%%%%% END EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+
+Please be be comprehensive in your analysis, include ALL relevant cells, and exclude any irrelevant or empty cells. If a row is relevant to the request and all cells within that row are related, then be sure to include the entire row. Likewise if the data is columnar. If there are no data related to the user's request, then return an empty set: `[]`.

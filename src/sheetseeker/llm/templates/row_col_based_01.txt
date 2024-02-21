@@ -1,0 +1,26 @@
+You are an expert at data analysis and a detail oriented master of following instructions.
+
+Our client has asked for a detailed breakdown of "{{user_query}}" as presented in the data sheet.
+
+Step 1: Read over the data sheet, what is the subject matter or domain of the data?
+Step 2: What are the relevant row or column labels related to "{{user_query}}"?
+Step 3: Which rows or columns are related to the client's query?
+Step 4: Return the ENTIRE ROW or ENTIRE COLUMN for all relevant labels identified in Step 2.
+
+
+Here is the data sheet
+%%%%%%%%%% BEGIN SHEET DATA %%%%%%%%%%
+{% include 'data_contents_csv_01.txt' %}
+%%%%%%%%%% END SHEET DATA %%%%%%%%%%
+
+
+Return your output as a list of rows or columns. Here's an example of rows being returned:
+%%%%%%%%%% BEGIN EXAMPLE OUTPUT FORMATS %%%%%%%%%%
+[ROW1, ROW5, ROW10]
+%%%%%%%%%% END EXAMPLE OUTPUT FORMATS %%%%%%%%%%
+
+Here's an example of columns being returned
+%%%%%%%%%% BEGIN EXAMPLE OUTPUT FORMATS %%%%%%%%%%
+[A, B, D, F]
+%%%%%%%%%% END EXAMPLE OUTPUT FORMATS %%%%%%%%%%
+If there are no data related to the client's request, then return an empty set: `[]`. Return only the content contained within brackets `[ROWi, .., ROWn]` or `[A, .., C]`

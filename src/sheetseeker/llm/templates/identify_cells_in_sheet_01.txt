@@ -1,0 +1,16 @@
+You are an expert at data analysis. We need you to identify specific cells and/or ranges of data in the following spreadsheet.
+
+%%%%%%%%%% BEGIN SHEET DATA %%%%%%%%%%
+{% include 'data_contents_02.txt' %}
+%%%%%%%%%% END SHEET DATA %%%%%%%%%%
+
+The user has asked about "{{user_query}}". Here's our understanding of where in the sheet that data lies:
+%%%%%%%%%% BEGIN ASSESSMENT %%%%%%%%%%
+{{prev_response}}
+%%%%%%%%%% END ASSESSMENT %%%%%%%%%%
+
+Given that assessment, please return the list of cells or ranges of cells which are associated with the user's query. RETURN A LIST OF THE CELLS AND RANGES IN THE FOLLOWING FORMAT. DO NOT RETURN ANYTHING BUT THE LIST OF CELLS AND RANGES TO HIGHLIGHT.
+%%%%%%%%%% BEGIN EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+[A1, B3, C5, A2:A5, B6:D8]
+%%%%%%%%%% END EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+If the assessment indicates none of the data is relevant, simply return an empty set `[]`.

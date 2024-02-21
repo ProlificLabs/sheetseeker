@@ -1,0 +1,4 @@
+{# pipe delimited rather than csv #}
+{% for row in data %}
+{%- for cell in row -%}{% if not cell == None %}{{ cell }}{% endif %}{%if loop.first%}{% elif not loop.last %}|{% endif %} {% endfor %}{% if not loop.last %}{% endif %}
+{% endfor %}

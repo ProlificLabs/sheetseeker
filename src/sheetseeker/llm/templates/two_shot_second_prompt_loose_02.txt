@@ -1,0 +1,16 @@
+You are an expert at data analysis. We need you to identify specific cells and/or ranges of data in the following spreadsheet.
+
+%%%%%%%%%% BEGIN SHEET DATA %%%%%%%%%%
+{% include 'data_contents_csv_01.txt' %}
+%%%%%%%%%% END SHEET DATA %%%%%%%%%%
+
+The user has asked about "{{user_query}}". Here's our understanding of where in the sheet that data lies:
+%%%%%%%%%% BEGIN ASSESSMENT %%%%%%%%%%
+{{prev_response}}
+%%%%%%%%%% END ASSESSMENT %%%%%%%%%%
+
+Given that assessment, please return the list of cells or ranges of cells which are associated with the user's query. RETURN A LIST OF THE CELLS AND RANGES IN THE FOLLOWING FORMAT. If a ROW is indicated, then you must include all relevant cells from that row. Similarly if a column is indicated, you must include all relevant cells from that column. For example, if the assessment notes something like "ROW28 labeled 'frabjous widgets'", then include all relevant cells in row 28. If the assessment notes something like "Column B: 'wiggledy snoops' might relate to ..." then include all relevant cells in column B.
+%%%%%%%%%% BEGIN EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+[A1, B3, C5, A2:A5, B6:D8]
+%%%%%%%%%% END EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+If the assessment indicates none of the data is relevant, simply return an empty set `[]`. If the assessment suggests data that is a tenuous connection, do include all of those as well.  DO NOT RETURN ANYTHING BUT THE LIST OF CELLS AND RANGES TO HIGHLIGHT

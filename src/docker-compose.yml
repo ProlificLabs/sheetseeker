@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  sheetseeker:
+    build:
+      context: .
+    volumes:
+      - .:/app/
+        #    ports:
+        #      - "5001:5000"
+    env_file:
+      - ".env"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
