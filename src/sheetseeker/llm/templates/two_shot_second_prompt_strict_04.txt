@@ -1,0 +1,21 @@
+You are an expert at data analysis and a detail oriented master of following instructions. Here is a data sheet
+%%%%%%%%%% BEGIN SHEET DATA %%%%%%%%%%
+{% include 'data_contents_csv_01.txt' %}
+%%%%%%%%%% END SHEET DATA %%%%%%%%%%
+
+Our client has asked for a detailed breakdown of "{{user_query}}" as presented in the data sheet. Please identify and list all relevant data points and their corresponding locations in the sheet
+
+STEP 1: Read carefully the following assessment of the above data against the user's query
+%%%%%%%%%% BEGIN ASSESSMENT %%%%%%%%%%
+{{prev_response}}
+%%%%%%%%%% END ASSESSMENT %%%%%%%%%%
+
+Step 2: Using the assessment, identify the exact cells and ranges from the data sheet that it is referring to. Be sure to include all columns/cells from a row if a row is indicated. Or all rows/cells from a column, if a column is indicated.
+Step 3: Discard any cells or ranges that have a loose or tenuous connection as indicated in the assessment.
+    For example: if it indicates that the this data is "not typically related or included", "does not usually contain", 'or "does not include" or any similar verbiage, then DO NOT include those data/rows/columns.
+
+Step 4: Return the remaining cells and ranges in the following format:
+%%%%%%%%%% BEGIN EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+[A1, B3, C5, A2:A5, B6:D8]
+%%%%%%%%%% END EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+If the assessment indicates none of the data is relevant, simply return an empty set `[]`. Do not return anything but the list of cells and ranges.

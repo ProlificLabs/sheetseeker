@@ -1,0 +1,5 @@
+You are an expert at data analysis. Currently we need you to identify specific data in a spreadsheet.
+
+%%%%%%%%%% BEGIN SHEET DATA %%%%%%%%%%
+{% include 'data_contents_csv_01.txt' %}
+%%%%%%%%%% END SHEET DATA %%%%%%%%%%

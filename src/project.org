@@ -1,0 +1,61 @@
+#+TITLE: Sheetseeker take home technical interview project from Pulley
+
+* DONE set up python project and environment
+* DONE install dependencies
++ [X] openai
++ [X] excel worksheets
+* DONE be able to open and read a spreadsheet
+* DONE test calling openai
+* DONE decide on approach
+* DONE design project structure
+* DONE create api entry point
+this will be called from the cli or later, whatever other inteface this should support
+the args are the query against the spreadsheet and the filepath to the spreadsheet
+* DONE load spreadsheet from given filepath
+* DONE create prompt for highlight given user query and spreadsheet data
+** DONE create prompt template
+** DONE render template
+** DONE call open ai with prompt
+** DONE Tweak prompt until output looks correct
+* DONE parse openai response
+determine cells to highlight
+* DONE highlight the apropriate cells in spreadsheet
+** DONE highlight the cells
+*** DONE try highlighting a cell manually
+*** DONE save the new spreadsheet file
+*** DONE use the llm output to dictate what's getting the highlight
+** DONE save the final spreadsheet file
+* DONE test each of the example instructions
+CLOSED: [2024-02-19 Mon 14:59]
+ensuring they highlight the correct cells
+* DONE Bug: got B21:D21 but B21 wasn't highlighted
+i was attempting to skip highlighting empty cells, but python treats 0 as false.
+* DONE create simple cli
+arguments: same as api
+* DONE refactor
++ [X] use strategy pattern to swap between query strategies
++ [X] use constants for constants
++ [X] execute on TODO items
+* DONE cleanup code
++ [X] remove debugs
++ [X] remove unused prompt templates
+  nah, it's fine leave em.
++ [X] cleanup junk comments
+* DONE create automated eval checks
++ [X] refactor strategies such that they output cells highlighted
++ [X] compare with expected cells highlighted
++ [X] create framework to run strategy
++ [X] score based on expected cells
+* DONE test that it works after rotating the test sheet
+* TODO add documentation
++ [X] useful comments
++ [ ] readme
+* TODO add logging
+log LLM output in debug mode
+* TODO document alternative approaches
+* TODO document limitations
+* TODO handle error cases?
+* TODO use tenacity package
+for retries
+* TODO handle arbitrary sized spreadsheets
+This would take a decent amount of work. Going to consider it out of scope.

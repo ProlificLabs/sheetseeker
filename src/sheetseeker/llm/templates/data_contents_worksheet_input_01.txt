@@ -1,0 +1,3 @@
+{% for row in sheet.iter_rows(min_row=sheet.min_row, max_row=sheet.max_row, min_col=sheet.min_column, max_col=sheet.max_column,) %}
+  {%- for cell in row -%}{{ cell.value }}{% if not loop.last %},{% endif %}{% endfor %}{% if not loop.last %}{% endif %}
+{% endfor %}

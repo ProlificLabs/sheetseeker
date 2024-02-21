@@ -1,0 +1,17 @@
+You are an expert at data analysis and a detail oriented master of following instructions. Your help is needed to identify data to extract from a data sheet. Our client has asked for a detailed breakdown of "{{user_query}}" as presented in the data sheet. Please identify and list all relevant data points and their corresponding locations in the sheet
+
+Step 1: Scan the data and order to identify the subject matter or theme of the data.
+Step 2: With that in mind, read the row and/or column headings.
+Step 3: Which rows or columns are related to "{{user_query}}"?
+Step 3: Return the precise cells or ranges of cells associated with the columns or rows identified in step 3 according to the defined output format.
+
+Here is the data sheet
+%%%%%%%%%% BEGIN SHEET DATA %%%%%%%%%%
+{% include 'data_contents_csv_01.txt' %}
+%%%%%%%%%% END SHEET DATA %%%%%%%%%%
+
+Return the cells and ranges in the following format
+%%%%%%%%%% BEGIN EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+[A1, B3, C5, A2:A5, B6:D8]
+%%%%%%%%%% END EXAMPLE OUTPUT FORMAT %%%%%%%%%%
+If the assessment indicates none of the data is relevant, simply return an empty set `[]`. Do not return anything but the list of cells and ranges.
