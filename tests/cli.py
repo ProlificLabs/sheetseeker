@@ -4,12 +4,7 @@ from main import get_raw_data, llm_query
 class LocalTest:
     def __init__(self):
         print("Local conversation test. Type /exit to leave.")
-        self.csv_data = None
-        self.initialize_csv()
-
-    def initialize_csv(self):
         self.csv_data = get_raw_data()
-        print("Local CSV Data loaded")
 
     def run(self):
         talking = True
