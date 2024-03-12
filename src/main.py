@@ -7,7 +7,7 @@ from parse_sheet import get_raw_data
 from config import CONFIG
 
 
-def run():
+def run(query: str = CONFIG.get("query", "")):
     """
     Run the main application logic
 
@@ -21,8 +21,16 @@ def run():
 
     :return:
     """
-    csv_data = get_raw_data()
-    query = CONFIG.get("query", "")
+    try:
+        csv_data = get_raw_data()
+    except FileNotFoundError as err:
+        print(
+            f"FileNotFoundError: {err.strerror} {err.filename}.\n "
+            f"Please ensure that the file exists and is in the /data folder.\n "
+            f"Also ensure that the file name is correctly set in config.py."
+        )
+        return
+
     metric_answers: List[MetricAnswer] = llm_query(query, csv_data)
     print(f"Metric Answer: {metric_answers}")
 
