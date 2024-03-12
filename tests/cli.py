@@ -1,4 +1,4 @@
-from main import get_csv_data, llm_query
+from main import get_raw_data, llm_query
 
 
 class LocalTest:
@@ -8,7 +8,7 @@ class LocalTest:
         self.initialize_csv()
 
     def initialize_csv(self):
-        self.csv_data = get_csv_data()
+        self.csv_data = get_raw_data()
         print("Local CSV Data loaded")
 
     def run(self):
