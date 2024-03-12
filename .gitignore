@@ -6,3 +6,5 @@ data/csv_data
 
 .env
 .env.*
+
+Pipfile.lock
