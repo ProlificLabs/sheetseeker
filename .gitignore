@@ -1,0 +1,10 @@
+.idea
+.venv
+__pycache__
+*.pyc
+data/csv_data
+
+.env
+.env.*
+
+Pipfile.lock
